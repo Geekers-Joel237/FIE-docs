@@ -1,80 +1,154 @@
-# Financial Infrastructure Engineering Roadmap
+# Financial Infrastructure Engineering — Master Roadmap
 
-> Master map of the FIE learning journey. This document shows **what comes before what, why the dependency exists, and where each capability ultimately leads**.
+> A capability roadmap for progressing from Senior Backend Engineer to Staff / Architect-level Financial Infrastructure Engineer, with depth across Computer Science, Systems, Finance, AI, Cloud, and Performance.
+
+## How to use this roadmap
+
+This is **not a course checklist**. It is a sequence of capability gates.
+
+```text
+Understand dependency
+→ self-assess
+→ SKIP if mastered
+→ study only the gap
+→ build / solve / benchmark
+→ produce evidence
+→ PASS
+→ move forward
+```
+
+Professional experience is treated as a starting advantage, not as automatic proof of theoretical depth.
 
 ## Global dependency graph
 
 ```mermaid
 flowchart TD
-    F[00 Foundations]
-    D[01 DSA & Problem Solving]
-    CS[02 Computer Systems]
-    J[03 Advanced Java & JVM]
-    C[04 Concurrency & Multithreading]
-    DS[05 Distributed Systems]
-    S[06 Advanced Scalability & Cloud]
-    FI[07 Financial Infrastructure]
-    P[08 Performance Engineering]
-    L[08.5 Low-Latency Engineering]
-    AI[09 AI Engineering]
-    FAI[10 Financial AI]
-    A[11 Architecture & Staff Engineering]
-    CP[12 Capstone Projects]
-    E[13 Evidence & Credentials]
+    T00[00 Foundations & Readiness]
+    T01[01 DSA & Problem Solving]
+    T02[02 Computer Systems]
+    T03[03 Advanced Java & JVM]
+    T04[04 Concurrency & Multithreading]
+    T05[05 Distributed Systems]
+    T06[06 Advanced Scalability & Cloud]
+    T07[07 Financial Infrastructure]
+    T08[08 Performance Engineering]
+    T085[08.5 Low-Latency Engineering]
+    T09[09 AI Engineering]
+    T10[10 Financial AI]
+    T11[11 Architecture & Staff Engineering]
+    T12[12 Capstone Projects]
+    T13[13 Evidence & Credentials]
 
-    F --> D
-    F --> CS
-    D --> CS
-    CS --> J
-    CS --> C
-    J --> C
-    CS --> DS
-    C --> DS
-    DS --> S
-    J --> P
-    C --> P
-    P --> L
-    DS --> FI
-    S --> FI
-    FI --> P
-    FI --> L
-    AI --> FAI
-    FI --> FAI
-    DS --> FAI
-    S --> A
-    DS --> A
-    FI --> A
-    L --> A
-    FAI --> A
-    A --> CP
-    CP --> E
+    T00 --> T01
+    T01 --> T02
+    T02 --> T03
+    T02 --> T04
+    T03 --> T04
+    T02 --> T05
+    T04 --> T05
+    T05 --> T06
+    T03 --> T08
+    T04 --> T08
+    T08 --> T085
+    T05 --> T07
+    T06 --> T07
+    T07 --> T08
+    T07 --> T085
+    T05 --> T09
+    T06 --> T09
+    T09 --> T10
+    T07 --> T10
+    T05 --> T11
+    T06 --> T11
+    T07 --> T11
+    T085 --> T11
+    T10 --> T11
+    T11 --> T12
+    T12 --> T13
 ```
-
-## Track sequence
-
-### Track 00 — Foundations
-
-**Question:** What must be true before advanced systems concepts can be learned efficiently?
-
-Focus:
-
-- programming fundamentals where gaps exist
-- discrete mathematics
-- probability and statistics where relevant
-- SQL and data modeling
-- networking fundamentals
-- Linux / command line
-- Git and engineering workflow
-
-**Exit condition:** can reason comfortably about programs, data, networks, and basic system behavior.
 
 ---
 
-### Track 01 — DSA & Problem Solving
+# Track 00 — Foundations & Readiness
+
+**Question:** What must be true before advanced systems concepts can be learned efficiently?
+
+This track is intentionally selective for an experienced backend engineer.
+
+### 00.1 Programming & Computational Fluency
+
+- growth rates and logarithmic reasoning
+- asymptotic analysis
+- amortized analysis
+- core data structures
+- algorithm decomposition
+- computational / memory reasoning
+
+**Current status:** 🟡 Targeted remediation required.
+
+### 00.2 Discrete Mathematics & Probability
+
+- logic
+- sets, relations, functions
+- proof techniques
+- induction
+- combinatorics
+- graphs
+- modular arithmetic
+- probability fundamentals
+- random variables
+- expected value
+
+### 00.3 SQL & Relational Data Modeling
+
+- relational model
+- keys and constraints
+- normalization
+- joins
+- query reasoning
+- transactions
+- indexes
+- isolation
+- query plans
+
+### 00.4 Linux & CLI
+
+- processes
+- filesystems
+- permissions
+- shell tooling
+- process inspection
+- networking tools
+- debugging / profiling basics
+
+### 00.5 Git & Engineering Workflow
+
+- object model
+- branching
+- rebasing
+- merge strategies
+- history inspection
+- recovery
+- reproducible workflows
+
+### 00.6 Networking Fundamentals
+
+- TCP/IP mental model
+- DNS
+- HTTP
+- TLS
+- sockets
+- latency
+- connection lifecycle
+- basic load balancing
+
+**Exit condition:** no blocking foundation gaps for Track 01.
+
+---
+
+# Track 01 — DSA & Problem Solving
 
 **Question:** How do we model problems and choose efficient representations and algorithms?
-
-Progression:
 
 ```text
 Complexity
@@ -90,17 +164,17 @@ Complexity
 → Problem-solving patterns
 ```
 
-Primary role: develop algorithmic reasoning, not merely interview pattern memorization.
+The objective is rigorous algorithmic reasoning, not interview-pattern memorization.
 
 **Feeds:** Computer Systems, Distributed Systems, Performance, interviews.
 
+**Exit condition:** solve, explain, analyze, test, and defend representative problems across major algorithmic families.
+
 ---
 
-### Track 02 — Computer Systems
+# Track 02 — Computer Systems
 
 **Question:** What is actually happening beneath application-level abstractions?
-
-Progression:
 
 ```text
 Computer architecture
@@ -115,13 +189,13 @@ Computer architecture
 
 **Feeds:** JVM, concurrency, distributed systems, performance, low latency.
 
+**Exit condition:** explain end-to-end request execution across application, CPU, memory, OS, network, and storage.
+
 ---
 
-### Track 03 — Advanced Java & JVM
+# Track 03 — Advanced Java & JVM
 
 **Question:** How does the Java runtime behave, and how does that affect production systems?
-
-Progression:
 
 ```text
 Modern Java
@@ -135,15 +209,13 @@ Modern Java
 → JVM observability
 ```
 
-**Feeds:** concurrency, performance, low latency.
+**Exit condition:** diagnose JVM behavior using measurements and runtime evidence rather than intuition.
 
 ---
 
-### Track 04 — Concurrency & Multithreading
+# Track 04 — Concurrency & Multithreading
 
 **Question:** How do we safely and efficiently execute work concurrently?
-
-Progression:
 
 ```text
 Threads
@@ -161,15 +233,15 @@ Threads
 → parallelism
 ```
 
-**Feeds:** distributed systems, performance, low latency, financial transaction processing.
+**Financial applications:** concurrent ledger processing, payment state transitions, idempotency, high-throughput services.
+
+**Exit condition:** design and implement concurrent components with explicit correctness and performance arguments.
 
 ---
 
-### Track 05 — Distributed Systems
+# Track 05 — Distributed Systems
 
 **Question:** How do we build correct systems when machines, networks, and processes can fail independently?
-
-Progression:
 
 ```text
 Distributed-system model
@@ -187,15 +259,15 @@ Distributed-system model
 → recovery
 ```
 
-**Feeds:** scalability, financial infrastructure, architecture.
+**Financial applications:** payment orchestration, settlement, reconciliation, distributed ledger services.
+
+**Exit condition:** design systems under explicit failure and consistency constraints and defend the trade-offs.
 
 ---
 
-### Track 06 — Advanced Scalability & Cloud
+# Track 06 — Advanced Scalability & Cloud
 
 **Question:** How do systems scale while remaining reliable, observable, secure, and economically viable?
-
-Progression:
 
 ```text
 Capacity planning
@@ -216,15 +288,13 @@ Capacity planning
 → cost engineering
 ```
 
-**Feeds:** financial infrastructure and Staff-level architecture.
+**Exit condition:** deploy, observe, scale, secure, and recover a production-like system.
 
 ---
 
-### Track 07 — Financial Infrastructure
+# Track 07 — Financial Infrastructure
 
 **Question:** How do we engineer systems that can be trusted with money?
-
-Progression:
 
 ```text
 Financial domain model
@@ -243,9 +313,9 @@ Financial domain model
 → financial data integrity
 ```
 
-Cross-cutting invariants:
+### Cross-cutting invariants
 
-- no money creation or destruction by accident
+- no accidental money creation or destruction
 - idempotent financial actions
 - explicit state machines
 - immutable accounting history
@@ -254,15 +324,15 @@ Cross-cutting invariants:
 - recoverability
 - reconciliation
 
-This track becomes the primary domain laboratory for the entire curriculum.
+`kora-core` is the principal domain laboratory for this track.
+
+**Exit condition:** design and implement a correct financial subsystem and explain its invariants, failure modes, reconciliation strategy, and operational behavior.
 
 ---
 
-### Track 08 — Performance Engineering
+# Track 08 — Performance Engineering
 
 **Question:** How do we measure and systematically improve system performance?
-
-Progression:
 
 ```text
 Performance model
@@ -277,18 +347,16 @@ Performance model
 → synchronization costs
 → throughput / latency trade-offs
 → benchmarking
-→ performance regression analysis
+→ regression analysis
 ```
 
-**Feeds:** low latency and production optimization.
+**Exit condition:** produce reproducible benchmarks and use measurements to drive engineering decisions.
 
 ---
 
-### Track 08.5 — Low-Latency Engineering
+# Track 08.5 — Low-Latency Engineering
 
 **Question:** How do we build systems where predictable latency matters as much as throughput?
-
-Progression:
 
 ```text
 Latency decomposition
@@ -316,13 +384,13 @@ Applications:
 - transaction processing
 - high-throughput event pipelines
 
+**Exit condition:** explain and measure an end-to-end latency budget and identify the dominant contributors.
+
 ---
 
-### Track 09 — AI Engineering
+# Track 09 — AI Engineering
 
 **Question:** How do we build reliable AI systems rather than simply call models?
-
-Progression:
 
 ```text
 ML foundations
@@ -344,9 +412,11 @@ ML foundations
 → production AI systems
 ```
 
+**Exit condition:** ship an evaluated AI-enabled system with explicit reliability, latency, cost, and security trade-offs.
+
 ---
 
-### Track 10 — Financial AI
+# Track 10 — Financial AI
 
 **Question:** Where does AI create real value in financial infrastructure, and how do we deploy it safely?
 
@@ -363,15 +433,21 @@ Applications:
 - payment routing optimization
 - forecasting
 
-The engineering emphasis remains on correctness, explainability where required, evaluation, monitoring, latency, security, and controlled failure.
+Engineering emphasis:
+
+- correctness
+- evaluation
+- explainability where required
+- monitoring
+- latency
+- security
+- controlled failure
 
 ---
 
-### Track 11 — Architecture & Staff Engineering
+# Track 11 — Architecture & Staff Engineering
 
 **Question:** How does an experienced engineer move from solving problems to defining systems and technical direction?
-
-Focus:
 
 - architecture principles
 - system design
@@ -387,13 +463,13 @@ Focus:
 - mentoring
 - technical influence
 
-**Exit condition:** can independently frame ambiguous technical problems, establish constraints, make durable decisions, and communicate them across engineering and business stakeholders.
+**Exit condition:** independently frame ambiguous technical problems, establish constraints, make durable decisions, and communicate them across engineering and business stakeholders.
 
 ---
 
-### Track 12 — Capstone Projects
+# Track 12 — Capstone Projects
 
-Projects integrate multiple tracks and must produce public evidence.
+Projects integrate multiple tracks and produce public evidence.
 
 Candidate capstones:
 
@@ -410,14 +486,14 @@ Projects should include tests, benchmarks, architecture diagrams, ADRs, failure 
 
 ---
 
-### Track 13 — Evidence & Credentials
+# Track 13 — Evidence & Credentials
 
 **Question:** How do we make competence externally legible?
 
 Evidence categories:
 
 - certifications
-- course completion where meaningful
+- meaningful course completion
 - university assignments
 - GitHub projects
 - benchmarks
@@ -430,15 +506,37 @@ Evidence categories:
 
 Credentials are tracked separately from demonstrated capability.
 
-## Dependency rule
+---
 
-A later topic may be studied early for context, but it should not be considered mastered until its relevant prerequisites are satisfied.
+## Mastery levels
 
-## Roadmap status
+| Level | Meaning |
+|---|---|
+| L0 | Awareness |
+| L1 | Foundation |
+| L2 | Practitioner |
+| L3 | Advanced |
+| L4 | Senior |
+| L5 | Staff |
+| L6 | Expert / Architect |
+
+## Progression rules
+
+1. **Experience is credit, not immunity.** Professional experience can justify skipping introductory material, but not advanced conceptual validation.
+2. **No passive completion.** Watching a course is not evidence of mastery.
+3. **One primary path per topic.** Alternatives are selected only when they add specific value.
+4. **Free and accessible first.** Paid resources must justify their opportunity cost.
+5. **Proof beats certificates.** Certificates supplement evidence; they do not replace demonstrated capability.
+6. **Financial relevance is explicit.** Major systems concepts should eventually connect to financial infrastructure.
+7. **Measure before optimizing.** Performance claims require reproducible measurements.
+8. **Do not front-load everything.** Advanced prerequisites are learned when their dependency becomes active.
+
+## Status
 
 - [x] Curriculum architecture defined
 - [x] Master dependency graph defined
-- [ ] Track 00 detailed curriculum
+- [x] Track 00 structure defined
+- [ ] Track 00 detailed modules
 - [ ] Track 01 detailed curriculum
 - [ ] Track 02 detailed curriculum
 - [ ] Track 03 detailed curriculum
@@ -453,3 +551,5 @@ A later topic may be studied early for context, but it should not be considered 
 - [ ] Track 11 detailed curriculum
 - [ ] Capstone system
 - [ ] Evidence system
+
+**Current position:** Track 00 → 00.1 Programming & Computational Fluency → targeted remediation required.
