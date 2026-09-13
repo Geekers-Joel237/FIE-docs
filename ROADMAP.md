@@ -6,22 +6,26 @@
 
 This is a **map, not a checklist**.
 
+For every module:
+
 ```text
-Why does this exist?
+Why does it exist?
         ↓
 What are the prerequisites?
         ↓
-What must I be able to explain?
+What must I understand?
         ↓
 What must I be able to build / solve / measure?
         ↓
 Can I already demonstrate it?
-   ↙               ↘
-SKIP             STUDY
-                  ↓
-                 PROOF
-                  ↓
-                 PASS
+      ↙       ↘
+    SKIP      STUDY
+                ↓
+              PROOF
+                ↓
+               PASS
+                ↓
+             NEXT
 ```
 
 Professional experience is treated as a strong prior, not automatic proof of theoretical depth.
@@ -40,7 +44,7 @@ Professional experience is treated as a strong prior, not automatic proof of the
 
 ### Evidence rule
 
-Certificates may support the record, but **demonstrated capability is the primary evidence**: implementation, exercises, benchmarks, designs, incident analysis, technical writing, open-source work, or other observable artifacts.
+Certificates can support the record, but **demonstrated capability is primary evidence**: implementation, exercises, benchmarks, designs, incident analysis, technical writing, open-source work, or other observable artifacts.
 
 ---
 
@@ -48,23 +52,23 @@ Certificates may support the record, but **demonstrated capability is the primar
 
 ```mermaid
 flowchart TD
-    T00[00 Foundations & Readiness]
-    T01[01 DSA & Algorithmic Reasoning]
+    T00[00 Foundations]
+    T01[01 DSA]
     T02[02 Computer Systems]
-    T03[03 Databases & Storage Systems]
-    T04[04 Java / JVM Deep Dive]
-    T05[05 Concurrency & Parallelism]
+    T03[03 Databases & Storage]
+    T04[04 Java & JVM]
+    T05[05 Concurrency]
     T06[06 Distributed Systems]
-    T07[07 Cloud / Platform / SRE]
+    T07[07 Cloud Platform & SRE]
     T08[08 Financial Domain & Core Banking]
-    T09[09 Ledger / Payments / Money Movement]
+    T09[09 Ledger Payments & Money Movement]
     T10[10 Performance & Low Latency]
-    T11[11 Security & Financial Resilience]
-    T12[12 AI / ML Engineering]
+    T11[11 Security Resilience & Financial Safety]
+    T12[12 AI ML Engineering]
     T13[13 AI Systems & Financial AI]
-    T14[14 Advanced Architecture & Staff Engineering]
-    T15[15 Proof of Work / Open Source / External Signal]
-    T16[16 Capstones]
+    T14[14 Architecture & Staff Engineering]
+    T15[15 Proof of Work & External Signal]
+    T16[16 Integrated Capstones]
 
     T00 --> T01
     T00 --> T02
@@ -79,6 +83,7 @@ flowchart TD
     T05 --> T06
     T04 --> T05
     T06 --> T07
+    T03 --> T07
     T06 --> T08
     T03 --> T08
     T08 --> T09
@@ -109,7 +114,7 @@ flowchart TD
     T16 --> T15
 ```
 
-The graph is intentionally non-linear: topics can be sampled early for context, but mastery follows dependency order.
+The graph is intentionally non-linear. Context can be sampled early, but mastery should follow dependency order.
 
 ---
 
@@ -117,24 +122,22 @@ The graph is intentionally non-linear: topics can be sampled early for context, 
 
 **Question:** What must be true before advanced CS and systems material can be learned efficiently?
 
-For an experienced backend engineer, most application-level foundations are assumed. This track is diagnostic-first.
+For an experienced backend engineer, application-level foundations are assumed where demonstrated; this track is diagnostic-first.
 
 ## 00.1 Programming & Computational Fluency
-
 - control-flow reasoning
-- references / values
+- values, references and memory model
 - recursion
-- growth rates and logarithmic reasoning
+- growth rates and logarithms
 - asymptotic analysis
 - amortized analysis
 - core data structures
 - algorithm decomposition
 - computational / memory reasoning
 
-**Current status:** 🟡 Targeted remediation required.
+**Current status:** 🟡 targeted remediation required.
 
 ## 00.2 Discrete Mathematics & Probability
-
 - logic and propositions
 - sets, relations and functions
 - proof techniques
@@ -149,7 +152,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - basic distributions
 
 ## 00.3 SQL & Relational Modeling
-
 - relational model
 - keys and constraints
 - normalization
@@ -161,20 +163,17 @@ For an experienced backend engineer, most application-level foundations are assu
 - basic locking
 
 ## 00.4 Linux & Engineering Environment
-
 - processes
 - filesystems
 - permissions
 - shell
 - pipes / redirection
-- process inspection
 - signals
 - sockets
-- debugging tools
-- profiling basics
+- process inspection
+- debugging and profiling basics
 
 ## 00.5 Git & Reproducible Engineering
-
 - object model
 - branching
 - rebasing
@@ -182,11 +181,10 @@ For an experienced backend engineer, most application-level foundations are assu
 - history inspection
 - recovery
 - bisect
-- tags/releases
+- tags / releases
 - reproducible workflows
 
 ## 00.6 Networking Fundamentals
-
 - IP
 - DNS
 - TCP / UDP
@@ -197,7 +195,7 @@ For an experienced backend engineer, most application-level foundations are assu
 - connection lifecycle
 - basic load balancing
 
-**Exit:** no blocking prerequisite gap for Track 01–03.
+**Exit:** no blocking prerequisite gap for Tracks 01–04.
 
 ---
 
@@ -206,7 +204,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** How do we model problems and choose efficient representations and algorithms?
 
 ## 01.1 Complexity & Analysis
-
 - growth rates
 - O / Ω / Θ
 - best / average / worst case
@@ -216,7 +213,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - complexity of real code
 
 ## 01.2 Core Data Structures
-
 - arrays / dynamic arrays
 - linked structures
 - stacks / queues / deques
@@ -229,7 +225,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - union-find
 
 ## 01.3 Searching & Sorting
-
 - linear search
 - binary search
 - merge / quick / heap sort
@@ -239,7 +234,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - external sorting concepts
 
 ## 01.4 Algorithmic Techniques
-
 - invariants
 - two pointers
 - sliding window
@@ -252,18 +246,14 @@ For an experienced backend engineer, most application-level foundations are assu
 - dynamic programming
 
 ## 01.5 Graph Algorithms
-
 - BFS / DFS
 - topological ordering
 - shortest paths
-- Dijkstra
-- Bellman-Ford
+- Dijkstra / Bellman-Ford
 - minimum spanning trees
 - connectivity
-- union-find
 
 ## 01.6 Algorithm Engineering
-
 - correctness arguments
 - complexity derivation
 - adversarial inputs
@@ -271,7 +261,7 @@ For an experienced backend engineer, most application-level foundations are assu
 - cache awareness
 - implementation trade-offs
 
-**Evidence:** implementations, solved problems with explanations, correctness proofs, and selected benchmarks.
+**Evidence:** implementations, solved problems with explanations, correctness proofs and selected benchmarks.
 
 **Exit:** independent algorithmic reasoning rather than pattern memorization.
 
@@ -282,21 +272,18 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** What actually happens beneath application-level abstractions?
 
 ## 02.1 Computer Architecture
-
 - CPU execution model
 - registers / instructions
 - pipelines
-- superscalar execution
-- out-of-order execution
+- superscalar and out-of-order execution
 - branch prediction
 - cache hierarchy / cache lines
 - memory hierarchy
 - virtual memory
 - NUMA
-- SIMD/vectorization basics
+- SIMD / vectorization basics
 
 ## 02.2 Operating Systems
-
 - processes / threads
 - scheduling
 - context switching
@@ -308,7 +295,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - signals
 
 ## 02.3 Networking Deep Dive
-
 - TCP mechanics
 - congestion / flow control
 - retransmission
@@ -319,7 +305,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - connection pooling
 
 ## 02.4 Storage Fundamentals
-
 - HDD / SSD behavior
 - blocks / pages
 - fsync
@@ -339,7 +324,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** How do transactional data systems provide correctness, performance and durability?
 
 ## 03.1 Relational Internals
-
 - storage engine architecture
 - pages / buffers
 - indexes
@@ -352,7 +336,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - query optimization
 
 ## 03.2 Transactions
-
 - ACID
 - isolation levels
 - serializability
@@ -363,7 +346,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - timestamp ordering
 
 ## 03.3 Recovery
-
 - WAL
 - checkpoints
 - crash recovery
@@ -372,7 +354,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - replication interactions
 
 ## 03.4 Distributed Databases
-
 - partitioning
 - replication
 - distributed transactions
@@ -380,7 +361,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - distributed query execution
 
 ## 03.5 OLTP vs OLAP
-
 - workload characteristics
 - indexing
 - columnar storage
@@ -388,7 +368,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - HTAP trade-offs
 
 ## 03.6 Modern Storage
-
 - LSM-based systems
 - compaction
 - key-value stores
@@ -405,7 +384,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** What does Java actually do at runtime, and how does that affect production behavior?
 
 ## 04.1 Modern Java
-
 - collections internals
 - generics / type erasure
 - streams
@@ -415,7 +393,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - virtual threads
 
 ## 04.2 JVM
-
 - class files
 - class loading
 - bytecode
@@ -425,7 +402,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - deoptimization
 
 ## 04.3 Memory
-
 - object layout
 - references
 - allocation
@@ -435,7 +411,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - off-heap memory
 
 ## 04.4 Garbage Collection
-
 - generational GC
 - G1
 - ZGC
@@ -445,7 +420,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - tuning methodology
 
 ## 04.5 Java Memory Model
-
 - visibility
 - atomicity
 - ordering
@@ -454,7 +428,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - final fields
 
 ## 04.6 JVM Diagnostics
-
 - JFR
 - JMC
 - heap dumps
@@ -472,7 +445,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** How do we execute work concurrently while preserving correctness and controlling contention?
 
 ## 05.1 Fundamentals
-
 - concurrency vs parallelism
 - processes vs threads
 - shared state
@@ -480,7 +452,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - scheduling
 
 ## 05.2 Java Concurrency
-
 - synchronized
 - locks / conditions
 - executors
@@ -491,7 +462,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - structured concurrency
 
 ## 05.3 Memory & Atomicity
-
 - Java Memory Model
 - CAS
 - atomics
@@ -500,7 +470,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - cache coherence
 
 ## 05.4 Correctness
-
 - race conditions
 - deadlocks
 - livelocks
@@ -509,16 +478,14 @@ For an experienced backend engineer, most application-level foundations are assu
 - progress guarantees
 
 ## 05.5 Advanced Concurrency
-
 - lock-free structures
 - wait-free concepts
 - work stealing
-- actor/message-passing models
+- actor / message-passing models
 - backpressure
 - bounded queues
 
 ## 05.6 Financial Applications
-
 - concurrent ledger posting
 - idempotent processing
 - payment state transitions
@@ -533,7 +500,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** How do we build correct systems when machines, networks, clocks and processes can fail independently?
 
 ## 06.1 Model & Failure
-
 - distributed-system models
 - crash failures
 - network failures
@@ -542,7 +508,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - failure detectors
 
 ## 06.2 Communication & Ordering
-
 - RPC
 - serialization
 - timeouts
@@ -553,8 +518,7 @@ For an experienced backend engineer, most application-level foundations are assu
 - total ordering
 
 ## 06.3 Replication & Consistency
-
-- primary/replica
+- primary / replica
 - quorum
 - strong consistency
 - eventual consistency
@@ -563,7 +527,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - read/write semantics
 
 ## 06.4 Consensus
-
 - consensus problem
 - Raft
 - leader election
@@ -572,7 +535,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - snapshots
 
 ## 06.5 Distributed Transactions
-
 - 2PC
 - saga patterns
 - transactional messaging
@@ -582,7 +544,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - exactly-once misconceptions
 
 ## 06.6 Distributed Data
-
 - partitioning
 - sharding
 - replication
@@ -591,7 +552,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - streams
 
 ## 06.7 Observability & Failure
-
 - tracing
 - correlation
 - retry storms
@@ -609,7 +569,6 @@ For an experienced backend engineer, most application-level foundations are assu
 **Question:** How do we operate mission-critical systems at scale?
 
 ## 07.1 Cloud Foundations
-
 - AWS core services
 - IAM
 - networking
@@ -620,7 +579,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - security
 
 ## 07.2 Containers & Kubernetes
-
 - container runtime concepts
 - images
 - orchestration
@@ -633,16 +591,14 @@ For an experienced backend engineer, most application-level foundations are assu
 - operators
 
 ## 07.3 Infrastructure as Code
-
 - Terraform
 - modules
 - state
 - drift
 - environments
-- policy
+- policy as code
 
 ## 07.4 CI/CD & Release Engineering
-
 - build pipelines
 - testing
 - artifacts
@@ -652,7 +608,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - progressive delivery
 
 ## 07.5 Observability
-
 - metrics
 - logs
 - traces
@@ -662,7 +617,6 @@ For an experienced backend engineer, most application-level foundations are assu
 - dashboards
 
 ## 07.6 SRE
-
 - SLI / SLO / SLA
 - error budgets
 - incident response
@@ -673,14 +627,11 @@ For an experienced backend engineer, most application-level foundations are assu
 - RTO / RPO
 
 ## 07.7 Platform Engineering
-
 - internal platforms
 - golden paths
 - developer experience
-- policy as code
+- policy enforcement
 - self-service infrastructure
-
-Financial workloads require explicit operational risk, regulatory, resilience and auditability considerations; AWS's current Financial Services Industry Lens is a useful external reference for this layer. citeturn0search0turn0search1turn0search2
 
 **Exit:** deploy, observe, scale, secure and recover a production-like workload.
 
@@ -691,9 +642,8 @@ Financial workloads require explicit operational risk, regulatory, resilience an
 **Question:** What exactly are we engineering when the system represents money and financial obligations?
 
 ## 08.1 Financial Foundations
-
 - money as value
-- currency
+- currencies
 - minor units / precision
 - FX
 - accounts
@@ -703,13 +653,10 @@ Financial workloads require explicit operational risk, regulatory, resilience an
 - settlement
 
 ## 08.2 Banking Domain
-
 - customer / party
-- accounts
-- account lifecycle
+- accounts and lifecycle
 - products
-- available balance
-- ledger balance
+- available vs ledger balance
 - holds
 - fees
 - interest
@@ -718,7 +665,6 @@ Financial workloads require explicit operational risk, regulatory, resilience an
 - end-of-day processing
 
 ## 08.3 Core Banking Architecture
-
 - posting engine
 - product engine
 - account engine
@@ -729,26 +675,20 @@ Financial workloads require explicit operational risk, regulatory, resilience an
 - integration boundaries
 
 ## 08.4 Financial Controls
-
 - segregation of duties
 - auditability
 - reconciliation
-- financial controls
 - operational controls
 - regulatory concepts
 
 ## 08.5 Financial Market Infrastructure Context
-
 - payment systems
 - clearing
 - settlement
 - securities settlement
 - central counterparties
-- trade repositories
 - settlement finality
 - operational resilience
-
-The BIS/CPMI-IOSCO PFMI provide the international reference framework for systemically important payment, clearing and settlement infrastructures and emphasize settlement finality, risk management, efficiency and communication standards. citeturn1search5turn1search7
 
 **Exit:** model financial systems in domain terms before choosing technical architecture.
 
@@ -761,7 +701,6 @@ The BIS/CPMI-IOSCO PFMI provide the international reference framework for system
 This is the **core specialization track**.
 
 ## 09.1 Double-Entry Ledger
-
 - accounts
 - debits / credits
 - journal entries
@@ -775,634 +714,629 @@ This is the **core specialization track**.
 - corrections
 - auditability
 
-Modern ledger systems such as Modern Treasury's Ledgers explicitly use immutable double-entry accounting, while TigerBeetle implements a purpose-built financial transaction database around accounts, transfers and ledgers. These are useful industry reference models, not substitutes for first-principles understanding. citeturn1search3turn1search6turn1search0
-
 ## 09.2 Ledger Correctness
-
-- no accidental money creation/destruction
-- atomic posting
 - balanced entries
+- no accidental money creation / destruction
+- atomic posting
 - uniqueness
 - ordering
 - idempotency
-- immutability
+- concurrency control
 - deterministic projections
-- audit trail
 
 ## 09.3 Payment Lifecycle
-
 - initiation
 - authorization
 - capture
 - clearing
 - settlement
-- refund
-- reversal
-- chargeback
-- dispute
+- refunds
+- chargebacks
+- disputes
 - payment state machines
 
-## 09.4 Payment Rails & Messaging
-
-- cards
-- bank transfers
-- instant payments
-- ACH-like systems
-- RTGS concepts
-- correspondent banking
-- ISO 20022
-- financial messaging
-
-ISO 20022 is the international framework for structured financial messages across payments and other financial services; the 2026 edition continues the standard's metamodel and interoperability focus. citeturn1search4
-
-## 09.5 Reconciliation
-
-- internal reconciliation
-- external reconciliation
-- settlement reconciliation
-- breaks
-- unmatched transactions
-- suspense accounts
-- correction workflows
-- reconciliation windows
-
-## 09.6 Correctness Patterns
-
-- idempotency keys
-- deduplication
+## 09.4 Payment Infrastructure
+- payment orchestration
+- PSP integrations
+- routing
 - retries
-- transactional boundaries
-- outbox / inbox
-- state machines
-- exactly-once misconceptions
-- compensating actions
+- idempotency keys
+- tokenization concepts
+- webhooks
+- reconciliation
 
-## 09.7 Advanced Financial Infrastructure
-
-- multi-currency
-- FX
-- fees
-- limits
+## 09.5 Money Movement
+- transfers
 - holds
-- reserves
+- reservations
+- fees
+- FX
 - settlement accounts
-- netting
 - liquidity
-- exposure
-- ledger partitioning
-- high-throughput posting
 
-**Primary proof-of-work:** `kora-core`.
+## 09.6 Reconciliation
+- source-of-truth selection
+- internal vs external records
+- matching
+- breaks
+- exception handling
+- replay
+- operational workflows
 
-**Exit:** design and implement a correct financial subsystem and defend its invariants, failure modes, reconciliation model and operational behavior.
+## 09.7 Financial Messaging
+- ISO 20022 concepts
+- payment messages
+- event schemas
+- versioning
+- backwards compatibility
+
+**Primary proof-of-work:** progressively turn `kora-core` into a production-quality wallet / ledger engine.
+
+**Exit:** design and implement a correct financial subsystem and defend its invariants, failure modes and reconciliation strategy.
 
 ---
 
 # 12. Track 10 — Performance Engineering & Low Latency
 
-**Question:** How do we turn correctness-first systems into measurable, predictable high-performance systems?
+**Question:** How do we make performance measurable, predictable and explainable?
 
 ## 10.1 Methodology
-
-- workload characterization
-- hypotheses
-- benchmarks
-- profiling
-- baselines
-- regression analysis
+- hypothesis-driven optimization
+- profiling before optimizing
+- benchmark design
+- workload modeling
+- reproducibility
 
 ## 10.2 Latency
-
-- latency decomposition
-- throughput
-- utilization
-- queueing
-- tail latency
 - p50 / p95 / p99 / p999
+- tail latency
+- coordinated omission
 - latency budgets
+- queueing effects
 
-## 10.3 CPU & Memory
-
-- cache locality
-- branch prediction
-- allocation
-- object layout
-- GC
-- NUMA
-- SIMD concepts
-
-## 10.4 Concurrency Performance
-
-- lock contention
-- false sharing
-- atomic costs
-- queues
-- batching
-- backpressure
-- work stealing
-
-## 10.5 JVM Performance
-
+## 10.3 JVM Performance
+- allocation pressure
+- GC behavior
 - JIT behavior
-- GC tuning
-- allocation elimination
+- object layout
 - profiling
-- JFR
-- async-profiler
 
-## 10.6 Low-Latency Systems
+## 10.4 CPU / Memory
+- cache locality
+- cache lines
+- branch prediction
+- false sharing
+- memory bandwidth
+- NUMA
+- vectorization
 
-- predictable latency
-- jitter
-- allocation avoidance
-- ring buffers
-- lock-free designs
-- kernel / syscall overhead
-- network stack effects
+## 10.5 Concurrency Performance
+- lock contention
+- queueing
+- thread scheduling
+- work stealing
+- backpressure
+
+## 10.6 Network / I/O
+- syscall overhead
+- batching
+- connection management
+- serialization
+- zero-copy concepts
+- kernel networking concepts
+
+## 10.7 Advanced Low Latency
+- event-driven architecture
+- bounded allocation
+- object reuse
+- kernel bypass concepts
 - busy polling concepts
-- CPU affinity concepts
+- affinity concepts
+- specialized transports
 
-## 10.7 Financial Applications
-
-- payment authorization latency
-- fraud decision latency
-- transaction processing
-- market data
-- risk checks
-- high-throughput ledger posting
-
-**Exit:** make performance claims from reproducible measurements.
+**Exit:** produce reproducible benchmarks and use measurements to drive architecture decisions.
 
 ---
 
 # 13. Track 11 — Security, Resilience & Financial Safety
 
-**Question:** How do we prevent technical failures from becoming financial or systemic failures?
+**Question:** How do we protect systems whose failures can create financial, legal or systemic consequences?
 
 ## 11.1 Application Security
-
 - authentication
 - authorization
-- OAuth / OIDC
+- session / token security
 - secrets
-- cryptography fundamentals
-- secure APIs
 - input validation
+- secure APIs
 
-## 11.2 Infrastructure Security
-
-- IAM
-- network isolation
-- encryption
+## 11.2 Cryptography Fundamentals
+- hashing
+- MACs
+- digital signatures
+- symmetric / asymmetric encryption
 - key management
-- container security
+- TLS
+
+## 11.3 Distributed Security
+- service identity
+- mTLS
+- zero-trust concepts
+- workload identity
 - supply-chain security
-- vulnerability management
 
-## 11.3 Financial Security
-
-- fraud
-- account takeover
-- payment abuse
-- transaction limits
-- velocity controls
-- risk signals
+## 11.4 Financial Safety
+- transaction authorization
+- limits
+- fraud controls
+- replay protection
+- audit trails
 - segregation of duties
+- tamper evidence
 
-## 11.4 Resilience
-
-- failure domains
-- backups
-- disaster recovery
-- RTO / RPO
-- multi-region
+## 11.5 Resilience
 - graceful degradation
-- business continuity
+- isolation
+- bulkheads
+- circuit breakers
+- disaster recovery
+- chaos / fault injection
 
-## 11.5 Financial Integrity
+## 11.6 Compliance Awareness
+- PCI DSS concepts
+- data protection
+- audit requirements
+- retention
+- regulatory change management
 
-- unauthorized posting
-- replay attacks
-- duplicate payments
-- lost events
-- inconsistent balances
-- audit integrity
-- forensic traceability
-
-**Exit:** threat-model a financial system and show how security and resilience controls preserve financial correctness.
+**Exit:** threat-model and resilience-test a financial transaction system.
 
 ---
 
-# 14. Track 12 — AI / ML Engineering Foundations
+# 14. Track 12 — AI / ML Engineering
 
-**Question:** What does an engineer need to understand to build AI systems rather than merely consume models?
+**Question:** What does it take to build reliable AI systems rather than merely call models?
 
-## 12.1 Mathematics & ML Foundations
-
-- vectors / matrices
-- probability
-- statistics
-- optimization
+## 12.1 ML Foundations
+- supervised / unsupervised learning
+- train / validation / test
 - loss functions
-- gradient descent
+- optimization
 - overfitting
 - evaluation
+- feature engineering
 
 ## 12.2 Deep Learning
-
 - neural networks
+- backpropagation
 - embeddings
 - attention
 - transformers
-- training loops
+
+## 12.3 LLM Foundations
+- tokenization
+- context windows
+- pretraining concepts
+- instruction tuning
+- alignment concepts
 - inference
 
-## 12.3 LLM Fundamentals
+## 12.4 LLM Application Engineering
+- prompting
+- structured output
+- tool calling
+- RAG
+- embeddings / vector search
+- agents
+- workflows
 
-- tokenization
-- embeddings
-- transformer architecture
-- context windows
-- next-token prediction
-- pretraining
-- post-training
-- reasoning models
+## 12.5 Evaluation
+- offline evaluation
+- task-specific metrics
+- hallucination / grounding
+- regression testing
+- human evaluation
+- safety evaluation
 
-## 12.4 ML Systems
+## 12.6 Production ML
+- data pipelines
+- feature / embedding pipelines
+- model registry concepts
+- versioning
+- serving
+- monitoring
+- drift
 
-- datasets
-- training pipelines
-- model serving
-- GPU fundamentals
-- batching
-- inference latency
-- model/version management
-
-**Exit:** explain the model/system boundary and build a basic measured ML/LLM pipeline.
+**Exit:** build an evaluated AI feature with explicit quality, latency, cost and failure criteria.
 
 ---
 
 # 15. Track 13 — AI Systems & Financial AI
 
-**Question:** How do we build reliable AI-enabled systems under real production constraints?
+**Question:** Where does AI create durable leverage in financial infrastructure?
 
-## 13.1 LLM Application Engineering
-
-- prompting
-- structured outputs
-- tool use
-- function calling
-- RAG
-- embeddings
-- vector search
-- context engineering
-
-## 13.2 Agent Systems
-
-- planning
-- tool execution
-- state
-- memory
-- orchestration
-- multi-agent patterns
-- failure containment
-- permissions
-
-## 13.3 Evaluation
-
-- offline evaluation
-- task metrics
-- hallucination measurement
-- retrieval evaluation
-- agent evaluation
-- regression suites
-- human evaluation
-
-## 13.4 Production AI
-
-- inference serving
+## 13.1 Inference Systems
 - batching
+- dynamic batching
 - KV cache
 - quantization
-- caching
+- model parallelism concepts
+- inference latency
+- throughput
+- GPU utilization
+
+## 13.2 AI Infrastructure
+- model serving
 - routing
+- caching
 - observability
-- cost
-- latency
+- evaluation pipelines
+- model / prompt versioning
+- cost engineering
+
+## 13.3 RAG & Knowledge Systems
+- retrieval architecture
+- chunking
+- indexing
+- reranking
+- grounding
+- citation / provenance
+- freshness
+
+## 13.4 Agentic Systems
+- tool use
+- state
+- planning
+- workflow orchestration
+- guardrails
+- human-in-the-loop
 - reliability
-- security
 
-A current systems-oriented LLM roadmap similarly treats model internals, training, inference, serving, KV cache, quantization, RAG, agents, evaluation and production architecture as distinct layers rather than collapsing everything into prompt engineering. citeturn0search8
-
-## 13.5 Financial AI
-
-- fraud detection
-- transaction anomaly detection
-- risk scoring
-- AML investigation support
+## 13.5 Financial AI Applications
+- transaction intelligence
+- fraud / risk support
 - reconciliation assistance
-- payment routing
-- financial document intelligence
+- financial document processing
 - operations intelligence
-- developer productivity for financial systems
+- developer productivity
+- customer / analyst workflows
 
-## 13.6 AI Governance
-
-- privacy
-- data lineage
+## 13.6 Financial AI Safety
 - explainability
-- model risk
-- access control
-- prompt injection
+- auditability
 - data leakage
-- evaluation gates
-- human oversight
+- model risk
+- adversarial inputs
+- deterministic controls around probabilistic components
 
-**Exit:** ship an evaluated AI-enabled financial engineering system with explicit quality, latency, cost, safety and security constraints.
+**Exit:** ship an evaluated AI-enabled financial system with explicit reliability, latency, cost, security and auditability trade-offs.
 
 ---
 
 # 16. Track 14 — Advanced Architecture & Staff Engineering
 
-**Question:** How does an engineer move from solving assigned problems to defining systems, boundaries and technical direction?
+**Question:** How does a strong engineer make high-leverage technical decisions across a system and an organization?
 
-## 14.1 System Design
+## 14.1 Requirements
+- functional requirements
+- non-functional requirements
+- constraints
+- capacity assumptions
+- risk identification
+- ambiguity reduction
 
-- requirements decomposition
-- domain modeling
-- APIs
-- events
-- data architecture
-- consistency
+## 14.2 Architecture
+- domain boundaries
+- service decomposition
+- modular monoliths
+- microservices
+- event-driven systems
+- API design
+- data ownership
+
+## 14.3 Distributed Architecture
+- consistency choices
 - partitioning
 - replication
-- caching
-- queues
-- storage
+- messaging
+- failure handling
+- migration
 
-## 14.2 Reliability Architecture
-
-- failure budgets
-- redundancy
-- recovery
-- observability
-- capacity
-- degradation
-- disaster recovery
-
-## 14.3 Financial Architecture
-
-Design and defend:
-
+## 14.4 Financial Architecture
 - payment processor
-- payment orchestration
 - ledger platform
 - reconciliation engine
 - core banking platform
-- transaction processing engine
-- settlement platform
-- financial data platform
+- payment orchestration
+- transaction processing
 
-## 14.4 Architecture Trade-offs
+## 14.5 Reliability / Operations
+- SLO-driven design
+- capacity planning
+- observability
+- disaster recovery
+- incident architecture
 
-For every decision:
+## 14.6 Architecture Economics
+- cost models
+- build vs buy
+- managed vs self-hosted
+- operational burden
+- technical debt
+- migration cost
 
-```text
-correctness
-latency
-throughput
-availability
-consistency
-security
-operability
-cost
-complexity
-team capability
-regulatory constraints
-```
-
-## 14.5 Staff Engineering
-
+## 14.7 Staff-Level Technical Leadership
 - technical strategy
-- platform thinking
-- architecture roadmaps
-- migration strategy
-- technical debt management
-- organizational boundaries
-- influence without authority
+- architecture reviews
+- RFCs / ADRs
+- cross-team influence
+- standards
 - mentoring
-- design reviews
-- written communication
-- stakeholder alignment
+- roadmap shaping
+- managing technical risk
 
-## 14.6 Architecture Evidence
-
-- ADRs
-- architecture diagrams
-- design reviews
-- capacity models
-- failure analysis
-- migration plans
-- benchmark reports
-
-**Exit:** independently frame ambiguous problems, make durable architecture decisions, and defend them to technical and non-technical stakeholders.
+**Exit:** defend architecture decisions under ambiguous requirements and realistic operational constraints.
 
 ---
 
-# 17. Track 15 — Proof of Work & External Signal
+# 17. Track 15 — Proof of Work, Open Source & External Signal
 
-**Question:** How do we make high-level competence externally legible?
+**Question:** How do we convert private competence into credible external evidence?
 
-## 15.1 Technical Writing
-
-- monthly English technical articles
-- architecture explainers
-- benchmark reports
-- deep dives
-- failure analyses
-
-## 15.2 Open Source
-
+## 15.1 Core Artifact
 - `kora-core`
-- upstream contributions
-- issues / PRs
+- architecture documentation
+- correctness model
+- benchmarks
+- test strategy
+- failure model
+- observability
+
+## 15.2 Technical Writing
+- monthly English technical articles
+- deep-dive engineering notes
+- architecture decision records
+- benchmark reports
+- incident / failure analyses
+
+## 15.3 Open Source
+- meaningful contributions
+- issue investigation
+- pull requests
 - design discussions
-- documentation
+- maintainer-quality communication
 
-## 15.3 Research Reproduction
-
-- reproduce interesting systems papers
-- reproduce performance results where practical
-- document deviations
-
-## 15.4 Public Engineering Evidence
-
-- talks
-- meetups
-- conference submissions
+## 15.4 Public Technical Signal
+- GitHub portfolio
+- LinkedIn technical positioning
+- talks / meetups
+- conference submissions where appropriate
 - technical demos
-- open-source releases
 
-## 15.5 Career Signal
+## 15.5 Career Evidence
+- Staff-level impact stories
+- architecture examples
+- quantified engineering outcomes
+- leadership examples
+- international-market positioning
 
-- targeted GitHub portfolio
-- technical LinkedIn narrative
-- Staff-level design portfolio
-- references / recommendations
-- certifications only where they add signal
-
-**Exit:** external evidence supports the claim of Staff/Architect-level capability rather than relying on job title alone.
+**Exit:** a coherent body of evidence supports the target Staff / Architect narrative.
 
 ---
 
 # 18. Track 16 — Integrated Capstones
 
-The capstones deliberately combine tracks.
+The capstones integrate multiple tracks instead of creating isolated toy projects.
 
-### Capstone A — `kora-core`
+## Capstone A — Production-grade Wallet / Ledger Engine
 
-**Tracks:** 03 + 05 + 06 + 08 + 09 + 10
+**Core:** `kora-core`
 
-Build a production-grade wallet / ledger engine with:
-
-- immutable double-entry ledger
+Must cover:
+- double-entry ledger
+- immutable postings
 - balance projection
 - idempotency
-- transaction state machine
-- concurrent posting
+- concurrency
 - persistence
-- recovery
 - reconciliation
-- benchmarks
+- API
 - observability
+- security
+- benchmarks
 
-### Capstone B — Payment Orchestration Platform
+## Capstone B — Payment Processing Platform
 
-**Tracks:** 06 + 07 + 08 + 09 + 10 + 11
+Must cover:
+- payment state machine
+- orchestration
+- PSP abstraction
+- retries
+- idempotency
+- webhooks
+- settlement
+- reconciliation
+- failure recovery
 
-### Capstone C — Distributed Reconciliation Engine
+## Capstone C — High-Throughput Transaction Processor
 
-**Tracks:** 03 + 06 + 07 + 09 + 10
+Must cover:
+- concurrent ingestion
+- ordering semantics
+- partitioning
+- backpressure
+- batching
+- latency measurement
+- p99 optimization
 
-### Capstone D — High-Throughput Transaction Processor
+## Capstone D — Financial AI System
 
-**Tracks:** 02 + 04 + 05 + 09 + 10
+Must cover:
+- real financial use case
+- RAG / tool use where justified
+- evaluation
+- grounding
+- security
+- cost
+- inference latency
+- human / deterministic controls
 
-### Capstone E — Low-Latency Financial Event Engine
+## Capstone E — Staff-Level Architecture Case
 
-**Tracks:** 02 + 04 + 05 + 10
+Produce a complete architecture package for a large financial platform:
+- requirements
+- capacity model
+- domain model
+- architecture
+- data model
+- consistency model
+- failure model
+- security model
+- observability
+- disaster recovery
+- cost model
+- ADRs
+- migration plan
 
-### Capstone F — AI Financial Operations System
+**Exit:** the portfolio demonstrates integrated Staff / Architect-level reasoning, not isolated topic completion.
 
-**Tracks:** 09 + 12 + 13 + 14
+---
 
-### Capstone G — End-to-End Financial Infrastructure Platform
+# 19. Cross-cutting disciplines
+
+These are not independent tracks; they recur throughout the curriculum.
+
+### Engineering quality
+- testing strategy
+- property-based testing
+- fuzzing
+- static analysis
+- code review
+- API compatibility
+- backward compatibility
+
+### Reliability
+- observability
+- SLOs
+- failure budgets
+- incident response
+- recovery testing
+
+### Security
+- threat modeling
+- least privilege
+- secrets
+- supply-chain security
+- data protection
+
+### Performance
+- measurement
+- profiling
+- benchmarking
+- workload modeling
+- capacity planning
+
+### Communication
+- technical writing
+- diagrams
+- RFCs
+- ADRs
+- architecture presentations
+
+### Financial correctness
+- invariants
+- auditability
+- reconciliation
+- deterministic controls
+- financial safety
+
+---
+
+# 20. Resource-selection policy
+
+The curriculum is **resource-agnostic**. We select resources after the competency map is stable.
+
+Priority order:
+
+1. authoritative / primary sources
+2. free university courses and open courseware
+3. high-quality books that provide coherent structure
+4. official documentation / standards
+5. strong open-source repositories
+6. high-signal technical talks / lectures
+7. paid courses only when they provide a material advantage
+
+For every major module, the final curriculum should identify:
 
 ```text
-API
-→ payment orchestration
-→ ledger
-→ event stream
-→ reconciliation
-→ risk/AI
-→ observability
-→ cloud deployment
-→ disaster recovery
+Primary resource
+Backup / alternative
+Why this resource
+What to skip
+Prerequisites
+Expected output
+Proof of mastery
 ```
 
-Each capstone should contain:
-
-- architecture diagram
-- ADRs
-- requirements
-- invariants
-- threat model
-- tests
-- failure injection
-- benchmark suite
-- observability
-- operational runbook
-- postmortem simulation
-- technical article
-
 ---
 
-# 19. External curriculum cross-checks
+# 21. What is deliberately not mandatory yet
 
-This roadmap is deliberately benchmarked against established systems curricula and primary financial-infrastructure references rather than being a list of fashionable technologies.
+Potential specialization branches that will be evaluated after the baseline roadmap:
 
-### Review 1 — Computer Science completeness
-
-CMU's systems concentration spans operating systems, compilers, parallel architecture, distributed systems, networking and databases. Its distributed-systems course combines principles with implementing and debugging real distributed systems. CMU's advanced database course covers database architecture, query optimization, concurrency control, query execution, indexing, logging/recovery and distributed databases. citeturn0search11turn0search12turn0search4
-
-**Result:** PASS — the roadmap has the major CS/system dependencies, with compiler/formal-method depth deliberately left as a v2 candidate rather than a mandatory core.
-
-### Review 2 — Production / Staff engineering completeness
-
-Google's SRE material covers SLOs, monitoring distributed systems, alerting, troubleshooting, incident response, postmortems and reliability-oriented software engineering. AWS Well-Architected provides a six-pillar architecture framework and a dedicated Financial Services Industry Lens covering resilience, operational excellence, regulatory concerns and financial workloads. OpenTelemetry provides the vendor-neutral instrumentation model for traces, metrics and logs. citeturn0search3turn0search9turn0search5turn0search2turn1search14
-
-**Result:** PASS — the roadmap does not stop at coding and system design; it includes operating and recovering systems.
-
-### Review 3 — Financial Infrastructure + AI differentiation
-
-BIS/CPMI-IOSCO PFMI provide the domain-level reference for payment, clearing and settlement infrastructures. ISO 20022 provides the structured financial messaging layer. Modern Treasury and TigerBeetle provide useful industry reference models for double-entry financial data systems. For AI, the roadmap follows a systems-oriented progression from model foundations to inference, serving, retrieval, agents, evaluation and production constraints. citeturn1search5turn1search4turn1search3turn1search0turn0search8
-
-**Result:** PASS with deliberate v2 deepening candidates around market infrastructure, risk/pricing, advanced AI systems and low-level systems programming.
-
----
-
-# 20. Known v2 refinement candidates
-
-These are intentionally not resolved in v1:
-
-- compiler / language-runtime depth
-- formal methods / verification
-- advanced networking and kernel bypass
+- C / C++ systems programming
+- Rust
+- compiler / language-runtime internals
 - eBPF
-- Rust / systems programming
-- C/C++ for low-level performance work
-- market microstructure / trading systems
-- securities / custody / post-trade systems
-- risk engines and pricing
-- AML / fraud domain depth
-- regulatory technology
-- cryptography depth
-- hardware acceleration
-- GPU programming
-- distributed databases research
-- stream processing internals
-- event sourcing / CQRS trade-offs
+- kernel bypass
+- advanced cryptography
+- formal methods
+- market microstructure
+- trading systems
+- securities / custody / post-trade
+- pricing / risk engines
+- GPU / hardware acceleration
+- advanced stream processing
 - data engineering / lakehouse systems
-- ML systems / MLOps depth
+- MLOps at scale
 - model risk management
-- AI agents and security
 
-These should be promoted into the core only if they materially support the target role rather than because they are interesting.
+These are candidates for strengthening or specialization, not automatic requirements.
 
 ---
 
-# 21. Current status
+# 22. Validation protocol
 
-| Track | Status |
-|---|---|
-| 00 Foundations | 🟡 In progress |
-| 01 DSA | 🟡 Mapped |
-| 02 Computer Systems | 🟡 Mapped |
-| 03 Databases & Storage | 🟡 Mapped |
-| 04 Java / JVM | 🟡 Mapped |
-| 05 Concurrency | 🟡 Mapped |
-| 06 Distributed Systems | 🟡 Mapped |
-| 07 Cloud / Platform / SRE | 🟡 Mapped |
-| 08 Financial Domain / Core Banking | 🟡 Mapped |
-| 09 Ledger / Payments | 🟡 Mapped |
-| 10 Performance / Low Latency | 🟡 Mapped |
-| 11 Security / Resilience | 🟡 Mapped |
-| 12 AI / ML Engineering | 🟡 Mapped |
-| 13 AI Systems / Financial AI | 🟡 Mapped |
-| 14 Architecture / Staff | 🟡 Mapped |
-| 15 Proof of Work | 🟡 Mapped |
-| 16 Capstones | 🟡 Mapped |
+Each track will eventually receive:
 
-**Current learning position:** Track 00 → 00.1 Programming & Computational Fluency → targeted remediation required.
+### Review A — Coverage
+Are the required concepts present?
 
-**Next refinement step:** convert each track into the same detailed template: `Why → prerequisites → dependency graph → mastery objectives → primary resources → alternatives → projects → evidence → validation gate`.
+### Review B — Dependency
+Are concepts taught in a defensible order?
+
+### Review C — Seniority
+Does the depth match Senior → Staff / Architect rather than beginner material?
+
+### Review D — Financial relevance
+Does the curriculum create real Financial Infrastructure differentiation?
+
+### Review E — Evidence
+Can mastery be demonstrated through observable artifacts?
+
+### Review F — Resource quality
+Are the selected resources structured, accessible and worth the opportunity cost?
+
+No track is considered final until these reviews are satisfied.
+
+---
+
+# 23. Current position
+
+**Current track:** Track 00 — Foundations & Readiness
+
+**Current module:** 00.1 Programming & Computational Fluency
+
+**Status:** 🟡 targeted remediation required.
+
+The global roadmap is intentionally broad at v1. We will now refine it iteratively, then work through the tracks in dependency order while allowing explicit skips for demonstrated mastery.
